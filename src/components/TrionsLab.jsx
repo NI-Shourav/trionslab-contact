@@ -96,7 +96,7 @@ END:VCARD`;
           </div>
 
           {/* Hero content container */}
-          <div className="relative pt-16 pb-32">
+          <div className="relative pt-16 pb-20">
             {/* ==================== LOGO SECTION ==================== */}
             <div className="flex justify-center mb-8 animate-fade-in-up">
               <div className="relative group">
@@ -214,7 +214,7 @@ END:VCARD`;
         </div>
 
         {/* ==================== CONTACT INFORMATION SECTION ==================== */}
-        <div className="max-w-md mx-auto px-6 -mt-12 pb-16">
+        <div className="max-w-md mx-auto px-6 -mt-10 pb-16">
           {/* ==================== TEAM CONTACTS CARD ==================== */}
           <div className={`border rounded-3xl shadow-2xl p-6 mb-6 animate-slide-in-up transition-colors duration-500 ${isDarkMode ? "bg-[#111111] border-white/5" : "bg-white border-black/5"}`}>
             <h2 className={`text-xs font-black mb-6 uppercase tracking-[0.3em] flex items-center gap-3 ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>
@@ -289,37 +289,37 @@ END:VCARD`;
               Office Details
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* Email */}
               <a
                 href="mailto:trionslab@gmail.com"
-                className="group flex items-start gap-4"
+                className={`group flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 border ${isDarkMode ? "bg-white/5 hover:bg-white/10 border-white/5" : "bg-gray-50 hover:bg-gray-100 border-black/5"}`}
               >
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${isDarkMode ? "bg-white/5" : "bg-black/5"}`}>
-                  <Mail className={`w-4 h-4 ${isDarkMode ? "text-white" : "text-black"}`} />
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform ${isDarkMode ? "bg-white text-black" : "bg-black text-white"}`}>
+                  <Mail className="w-5 h-5" />
                 </div>
-                <div>
-                  <div className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDarkMode ? "text-gray-600" : "text-gray-400"}`}>
-                    Corporate Email
-                  </div>
-                  <div className={`text-sm font-bold transition-colors ${isDarkMode ? "text-gray-300 group-hover:text-white" : "text-gray-700 group-hover:text-black"}`}>
+                <div className="flex-1">
+                  <div className={`text-sm font-bold tracking-wider ${isDarkMode ? "text-white" : "text-black"}`}>
                     trionslab@gmail.com
                   </div>
+                  <div className={`text-xs font-mono mt-0.5 ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>
+                    Corporate Email
+                  </div>
                 </div>
+                <ExternalLink className={`w-4 h-4 transition-colors ${isDarkMode ? "text-gray-700 group-hover:text-white" : "text-gray-300 group-hover:text-black"}`} />
               </a>
 
               {/* Location */}
-              <div className="group flex items-start gap-4">
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${isDarkMode ? "bg-white/5" : "bg-black/5"}`}>
-                  <MapPin className={`w-4 h-4 ${isDarkMode ? "text-white" : "text-black"}`} />
+              <div className={`group flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 border ${isDarkMode ? "bg-white/5 hover:bg-white/10 border-white/5" : "bg-gray-50 hover:bg-gray-100 border-black/5"}`}>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform ${isDarkMode ? "bg-white text-black" : "bg-black text-white"}`}>
+                  <MapPin className="w-5 h-5" />
                 </div>
-                <div>
-                  <div className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isDarkMode ? "text-gray-600" : "text-gray-400"}`}>
-                    Headquarters
+                <div className="flex-1">
+                  <div className={`text-sm font-bold tracking-wider leading-tight ${isDarkMode ? "text-white" : "text-black"}`}>
+                    Uttara Sector 14,<br />Road 23, Dhaka
                   </div>
-                  <div className={`text-sm font-bold leading-relaxed ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
-                    Uttara Sector 14, Road 23,<br />
-                    Dhaka, Bangladesh
+                  <div className={`text-xs font-mono mt-1 ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>
+                    Headquarters
                   </div>
                 </div>
               </div>

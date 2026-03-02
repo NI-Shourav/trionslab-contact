@@ -213,6 +213,17 @@ END:VCARD`;
           {/* Hero background */}
           <div className={`absolute inset-0 ${isDarkMode ? "bg-black" : "bg-white"}`}>
              <div className={`absolute inset-0 opacity-10 ${isDarkMode ? "bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)]" : "bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.05),transparent)]"}`}></div>
+             
+             {/* Logo Pattern Background */}
+             <div 
+               className={`absolute inset-0 pointer-events-none select-none transition-all duration-1000 ${isDarkMode ? "opacity-40" : "opacity-[0.2] invert"}`}
+               style={{
+                 backgroundImage: `url("https://i.imgur.com/QmMuLey.jpeg")`,
+                 backgroundRepeat: 'repeat',
+                 backgroundSize: '60%',
+                 backgroundPosition: 'center',
+               }}
+             />
           </div>
 
           {/* Hero content container */}

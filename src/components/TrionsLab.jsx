@@ -11,7 +11,8 @@ import {
   Globe,
   MessageSquare,
   Sun,
-  Moon
+  Moon,
+  X
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
@@ -27,6 +28,14 @@ export default function TrionsLab() {
     }
     return true;
   });
+  const [isCallPopupOpen, setIsCallPopupOpen] = useState(false);
+
+  // ==================== DATA DEFINITION ====================
+  const teamMembers = [
+    { name: "Mahmudul Ahsan", phone: "+8801521561664" },
+    { name: "Azmayen Sabil", phone: "+8801833352501" },
+    { name: "Nur Islam", phone: "+8801533513104" },
+  ];
 
   // ==================== EFFECT HOOKS ====================
   useEffect(() => {
@@ -168,8 +177,8 @@ END:VCARD`;
             {/* ==================== QUICK ACTION BUTTONS ==================== */}
             <div className="flex justify-center gap-6 px-4">
               {/* Phone call button */}
-              <a
-                href="tel:+8801521561664"
+              <button
+                onClick={() => setIsCallPopupOpen(true)}
                 className="group relative animate-fade-in-up flex flex-col items-center"
                 style={{ animationDelay: "0.2s" }}
               >
@@ -179,7 +188,7 @@ END:VCARD`;
                 <div className={`mt-2 text-[10px] uppercase tracking-widest font-bold transition-colors ${isDarkMode ? "text-gray-400 group-hover:text-white" : "text-gray-500 group-hover:text-black"}`}>
                   Call Now
                 </div>
-              </a>
+              </button>
 
               {/* Email button */}
               <a
@@ -409,6 +418,63 @@ END:VCARD`;
         .animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
         .animate-pulse-slower { animation: pulse-slower 8s ease-in-out infinite; }
       `}</style>
+
+      {/* ==================== CALL MODAL ==================== */}
+      {isCallPopupOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-6 backdrop-blur-sm bg-black/40 animate-fade-in"
+          onClick={() => setIsCallPopupOpen(false)}
+        >
+          <div 
+            className={`relative w-full max-w-sm rounded-[2rem] p-8 shadow-2xl animate-slide-in-up border ${
+              isDarkMode ? "bg-[#0a0a0a] border-white/10" : "bg-white border-black/5"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setIsCallPopupOpen(false)}
+              className={`absolute top-5 right-5 p-2 rounded-full transition-all hover:rotate-90 ${
+                isDarkMode ? "hover:bg-white/10 text-white/40 hover:text-white" : "hover:bg-black/5 text-black/40 hover:text-black"
+              }`}
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="text-center mb-8 pt-2">
+              <h3 className={`text-base font-black uppercase tracking-[0.2em] ${isDarkMode ? "text-white" : "text-black"}`}>
+                Quick Call
+              </h3>
+              <p className={`text-[9px] font-bold mt-1 uppercase tracking-[0.3em] ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>
+                Select a team member
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {teamMembers.map((member, idx) => (
+                <a
+                  key={idx}
+                  href={`tel:${member.phone}`}
+                  className={`flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 border hover:scale-[1.02] active:scale-[0.98] ${
+                    isDarkMode ? "bg-white/5 hover:bg-white/10 border-white/5" : "bg-gray-50 hover:bg-gray-100 border-black/5"
+                  }`}
+                >
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${isDarkMode ? "bg-white text-black" : "bg-black text-white"}`}>
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className={`text-sm font-bold uppercase tracking-wider ${isDarkMode ? "text-white" : "text-black"}`}>
+                      {member.name}
+                    </div>
+                    <div className={`text-[10px] font-mono mt-0.5 opacity-60 ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>
+                      {member.phone}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

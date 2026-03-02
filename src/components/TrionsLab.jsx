@@ -98,34 +98,41 @@ END:VCARD`;
           {/* Hero content container */}
           <div className="relative pt-12 pb-16">
             {/* ==================== LOGO SECTION ==================== */}
-            <div className="flex justify-center mb-6 animate-fade-in-up">
-              <div className="relative group">
-                {/* Rotating Decorative Ring */}
-                <div className={`absolute -inset-3 rounded-full border border-dashed animate-[spin_20s_linear_infinite] opacity-20 ${isDarkMode ? "border-white" : "border-black"}`} />
-                <div className={`absolute -inset-2 rounded-full border-2 border-blue-500/20 opacity-40 group-hover:opacity-100 transition duration-1000`}></div>
-                
-                <div className={`absolute -inset-1 rounded-full blur group-hover:bg-opacity-40 transition duration-500 ${isDarkMode ? "bg-white/20 group-hover:bg-white/40" : "bg-black/5 group-hover:bg-black/10"}`}></div>
-                <div className={`relative w-24 h-24 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.1)] transform group-hover:scale-105 transition-all duration-300 ${isDarkMode ? "bg-white" : "bg-white shadow-lg"}`}>
-                  <div className="text-center">
-                    <img
-                      className="w-20 h-20 rounded-full object-contain"
-                      src="https://i.imgur.com/fjtFjd4.png"
-                      alt="TRIONSLAB Official Logo"
-                      loading="eager"
-                      fetchpriority="high"
-                      decoding="async"
-                    />
+            <a 
+              href="https://trionslab.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex flex-col items-center group/logo"
+            >
+              <div className="flex justify-center mb-6 animate-fade-in-up">
+                <div className="relative group">
+                  {/* Rotating Decorative Ring */}
+                  <div className={`absolute -inset-3 rounded-full border border-dashed animate-[spin_20s_linear_infinite] opacity-20 ${isDarkMode ? "border-white" : "border-black"}`} />
+                  <div className={`absolute -inset-2 rounded-full border-2 border-blue-500/20 opacity-40 group-hover:opacity-100 transition duration-1000`}></div>
+                  
+                  <div className={`absolute -inset-1 rounded-full blur group-hover:bg-opacity-40 transition duration-500 ${isDarkMode ? "bg-white/20 group-hover:bg-white/40" : "bg-black/5 group-hover:bg-black/10"}`}></div>
+                  <div className={`relative w-24 h-24 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.1)] transform group-hover:scale-105 transition-all duration-300 ${isDarkMode ? "bg-white" : "bg-white shadow-lg"}`}>
+                    <div className="text-center">
+                      <img
+                        className="w-20 h-20 rounded-full object-contain"
+                        src="https://i.imgur.com/fjtFjd4.png"
+                        alt="TRIONSLAB Official Logo"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* ==================== MAIN HEADLINE SECTION ==================== */}
-            <div className="space-y-2 mb-4">
-              <h1 className={`text-3xl md:text-4xl font-black text-center tracking-tighter animate-fade-in-up uppercase ${isDarkMode ? "text-white" : "text-black"}`}>
-                TRIONSLAB
-              </h1>
-            </div>
+              {/* ==================== MAIN HEADLINE SECTION ==================== */}
+              <div className="space-y-2 mb-4">
+                <h1 className={`text-3xl md:text-4xl font-black text-center tracking-tighter animate-fade-in-up uppercase ${isDarkMode ? "text-white" : "text-black"}`}>
+                  TRIONSLAB
+                </h1>
+              </div>
+            </a>
 
             {/* ==================== SUBTITLE SECTION ==================== */}
             <div
@@ -134,26 +141,18 @@ END:VCARD`;
             >
               <Typewriter
                 words={[
+                  "The Lab for Modern SaaS Excellence",
                   "Building the Tools that Scale Your Ambition",
                   "Elevating Workflows Through Intelligent SaaS",
-                  "Engineering Growth with Precision SaaS",
-                  "Simplifying Complexity. Scaling Success.",
                   "Efficiency Engineered into Every Pixel",
                   "Architectures for the Digital Tomorrow",
                   "Pioneering the Next Generation of SaaS",
                   "Turning Visionary Ideas into Products",
                   "Innovation Meets Robust Infrastructure",
                   "Crafting Future Cloud-Native Solutions",
-                  "SaaS Built for Humans Behind the Screen",
-                  "Seamless Experiences. Superior Software.",
                   "Empowering Users with World-Class SaaS",
-                  "Design-First Engineering for Business",
-                  "Software that Feels Like the Future",
                   "High-Performance SaaS for High-Growth",
-                  "Precision Software. Unlimited Potential.",
-                  "The Lab for Modern SaaS Excellence",
                   "Unleashing Velocity Through Custom SaaS",
-                  "Code with Purpose. Products with Impact."
                 ]}
                 loop={0}
                 cursor
@@ -172,7 +171,7 @@ END:VCARD`;
                 className="group relative animate-fade-in-up flex flex-col items-center"
                 style={{ animationDelay: "0.2s" }}
               >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 group-hover:rotate-3 ${isDarkMode ? "bg-white" : "bg-black"}`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 ${isDarkMode ? "bg-white" : "bg-black"}`}>
                   <Phone className={`w-6 h-6 ${isDarkMode ? "text-black" : "text-white"}`} />
                 </div>
                 <div className={`mt-2 text-[10px] uppercase tracking-widest font-bold transition-colors ${isDarkMode ? "text-gray-400 group-hover:text-white" : "text-gray-500 group-hover:text-black"}`}>
@@ -186,7 +185,7 @@ END:VCARD`;
                 className="group relative animate-fade-in-up flex flex-col items-center"
                 style={{ animationDelay: "0.3s" }}
               >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 group-hover:-rotate-3 ${isDarkMode ? "bg-white" : "bg-black"}`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 ${isDarkMode ? "bg-white" : "bg-black"}`}>
                   <Mail className={`w-6 h-6 ${isDarkMode ? "text-black" : "text-white"}`} />
                 </div>
                 <div className={`mt-2 text-[10px] uppercase tracking-widest font-bold transition-colors ${isDarkMode ? "text-gray-400 group-hover:text-white" : "text-gray-500 group-hover:text-black"}`}>
@@ -202,7 +201,7 @@ END:VCARD`;
                 className="group relative animate-fade-in-up flex flex-col items-center"
                 style={{ animationDelay: "0.4s" }}
               >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 group-hover:rotate-3 ${isDarkMode ? "bg-white" : "bg-black"}`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 ${isDarkMode ? "bg-white" : "bg-black"}`}>
                   <MapPin className={`w-6 h-6 ${isDarkMode ? "text-black" : "text-white"}`} />
                 </div>
                 <div className={`mt-2 text-[10px] uppercase tracking-widest font-bold transition-colors ${isDarkMode ? "text-gray-400 group-hover:text-white" : "text-gray-500 group-hover:text-black"}`}>

@@ -169,26 +169,26 @@ END:VCARD`;
   };
 
   return (
-    <div className={`min-h-screen transition-all duration-500 overflow-x-hidden ${language === "bn" ? "font-bangla" : "font-sans"} ${isDarkMode ? "bg-black text-white" : "bg-[#f8f9fa] text-[#1a1a1a]"}`}>
+    <div className={`relative min-h-screen transition-all duration-500 overflow-x-hidden ${language === "bn" ? "font-bangla" : "font-sans"} ${isDarkMode ? "bg-black text-white" : "bg-[#f8f9fa] text-[#1a1a1a]"}`}>
       {/* ==================== THEME TOGGLE BUTTON ==================== */}
       <button
         onClick={toggleTheme}
-        className={`fixed top-6 right-6 z-50 p-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${
+        className={`absolute top-6 right-6 z-50 p-2 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 ${
           isDarkMode ? "bg-white text-black" : "bg-black text-white"
         }`}
       >
-        {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
       </button>
 
       {/* ==================== LANGUAGE TOGGLE BUTTON ==================== */}
       <button
         onClick={toggleLanguage}
-        className={`fixed top-24 right-6 z-50 p-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 flex items-center gap-2 ${
+        className={`absolute top-16 right-6 z-50 p-2 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 flex items-center gap-1.5 ${
           isDarkMode ? "bg-white text-black" : "bg-black text-white"
         }`}
       >
-        <Languages className="w-5 h-5" />
-        <span className={`text-[10px] font-black uppercase ${language === 'en' ? 'tracking-tighter' : 'tracking-normal'}`}>
+        <Languages className="w-4 h-4" />
+        <span className={`text-[9px] font-black uppercase ${language === 'en' ? 'tracking-tighter' : 'tracking-normal'}`}>
           {language === "en" ? "BN" : "EN"}
         </span>
       </button>

@@ -44,7 +44,9 @@ VERSION:3.0
 FN:TRIONSLAB
 ORG:TRIONSLAB
 TITLE:Software Company
-TEL;TYPE=CELL:+8801521561664
+TEL;TYPE=CELL;LABEL="Mahmudul Ahsan":+8801521561664
+TEL;TYPE=CELL;LABEL="Azmayen Sabil":+8801833352501
+TEL;TYPE=CELL;LABEL="Nur Islam":+8801533513104
 EMAIL:trionslab@gmail.com
 ADR;TYPE=WORK:;;Road 23;Uttara Sector 14;Dhaka;;Bangladesh
 URL:https://trionslab.com

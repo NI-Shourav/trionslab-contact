@@ -19,7 +19,6 @@ import { Typewriter } from "react-simple-typewriter";
 // ==================== MAIN COMPONENT ====================
 export default function TrionsLab() {
   // ==================== STATE MANAGEMENT ====================
-  const [hoveredSocial, setHoveredSocial] = useState(null);
   const [mounted, setMounted] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
@@ -79,9 +78,10 @@ END:VCARD`;
       <div className="fixed inset-0 pointer-events-none z-0">
         {mounted && (
           <>
-            {/* Subtle white/gray orbs for depth */}
-            <div className={`absolute top-1/4 -left-32 w-96 h-96 rounded-full opacity-5 blur-[120px] animate-pulse-slow ${isDarkMode ? "bg-white" : "bg-blue-400"}`} />
-            <div className={`absolute bottom-1/4 -right-32 w-96 h-96 rounded-full opacity-5 blur-[120px] animate-pulse-slower ${isDarkMode ? "bg-gray-500" : "bg-purple-400"}`} />
+            {/* Dynamic Aurora Blobs */}
+            <div className={`absolute top-0 -left-20 w-[500px] h-[500px] rounded-full blur-[140px] opacity-[0.08] animate-aurora-1 ${isDarkMode ? "bg-indigo-600" : "bg-blue-300"}`} />
+            <div className={`absolute bottom-0 -right-20 w-[500px] h-[500px] rounded-full blur-[140px] opacity-[0.08] animate-aurora-2 ${isDarkMode ? "bg-cyan-500" : "bg-purple-300"}`} />
+            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[160px] opacity-[0.04] animate-aurora-3 ${isDarkMode ? "bg-blue-600" : "bg-cyan-200"}`} />
           </>
         )}
       </div>
@@ -96,19 +96,19 @@ END:VCARD`;
           </div>
 
           {/* Hero content container */}
-          <div className="relative pt-16 pb-20">
+          <div className="relative pt-12 pb-16">
             {/* ==================== LOGO SECTION ==================== */}
-            <div className="flex justify-center mb-8 animate-fade-in-up">
+            <div className="flex justify-center mb-6 animate-fade-in-up">
               <div className="relative group">
                 {/* Rotating Decorative Ring */}
-                <div className={`absolute -inset-4 rounded-full border border-dashed animate-[spin_20s_linear_infinite] opacity-20 ${isDarkMode ? "border-white" : "border-black"}`} />
-                <div className={`absolute -inset-2 rounded-full border-2 border-gradient-to-r from-blue-500/30 to-purple-600/30 opacity-40 group-hover:opacity-100 transition duration-1000`}></div>
+                <div className={`absolute -inset-3 rounded-full border border-dashed animate-[spin_20s_linear_infinite] opacity-20 ${isDarkMode ? "border-white" : "border-black"}`} />
+                <div className={`absolute -inset-2 rounded-full border-2 border-blue-500/20 opacity-40 group-hover:opacity-100 transition duration-1000`}></div>
                 
                 <div className={`absolute -inset-1 rounded-full blur group-hover:bg-opacity-40 transition duration-500 ${isDarkMode ? "bg-white/20 group-hover:bg-white/40" : "bg-black/5 group-hover:bg-black/10"}`}></div>
-                <div className={`relative w-32 h-32 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.1)] transform group-hover:scale-105 transition-all duration-300 ${isDarkMode ? "bg-white" : "bg-white shadow-lg"}`}>
+                <div className={`relative w-24 h-24 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.1)] transform group-hover:scale-105 transition-all duration-300 ${isDarkMode ? "bg-white" : "bg-white shadow-lg"}`}>
                   <div className="text-center">
                     <img
-                      className="w-28 h-28 rounded-full object-contain"
+                      className="w-20 h-20 rounded-full object-contain"
                       src="https://i.imgur.com/fjtFjd4.png"
                       alt="TRIONSLAB Official Logo"
                       loading="eager"
@@ -122,14 +122,14 @@ END:VCARD`;
 
             {/* ==================== MAIN HEADLINE SECTION ==================== */}
             <div className="space-y-2 mb-4">
-              <h1 className={`text-4xl md:text-5xl font-black text-center tracking-tighter animate-fade-in-up uppercase ${isDarkMode ? "text-white" : "text-black"}`}>
+              <h1 className={`text-3xl md:text-4xl font-black text-center tracking-tighter animate-fade-in-up uppercase ${isDarkMode ? "text-white" : "text-black"}`}>
                 TRIONSLAB
               </h1>
             </div>
 
             {/* ==================== SUBTITLE SECTION ==================== */}
             <div
-              className={`text-center text-sm md:text-base mb-10 h-12 flex items-center justify-center max-w-xs mx-auto px-4 animate-fade-in-up uppercase tracking-[0.2em] font-medium ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
+              className={`text-center text-[11px] md:text-xs mb-8 h-10 flex items-center justify-center max-w-xs mx-auto px-4 animate-fade-in-up uppercase tracking-[0.2em] font-medium ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
               style={{ animationDelay: "0.1s" }}
             >
               <Typewriter
@@ -217,7 +217,7 @@ END:VCARD`;
         <div className="max-w-md mx-auto px-6 -mt-10 pb-16">
           {/* ==================== TEAM CONTACTS CARD ==================== */}
           <div className={`border rounded-3xl shadow-2xl p-6 mb-6 animate-slide-in-up transition-colors duration-500 ${isDarkMode ? "bg-[#111111] border-white/5" : "bg-white border-black/5"}`}>
-            <h2 className={`text-xs font-black mb-6 uppercase tracking-[0.3em] flex items-center gap-3 ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>
+            <h2 className={`text-[10px] font-black mb-6 uppercase tracking-[0.3em] flex items-center gap-3 ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>
               <span className={`w-8 h-[1px] ${isDarkMode ? "bg-white/20" : "bg-black/10"}`}></span>
               Management Team
             </h2>
@@ -284,7 +284,7 @@ END:VCARD`;
 
           {/* ==================== OFFICE INFO CARD ==================== */}
           <div className={`border rounded-3xl shadow-2xl p-6 mb-6 animate-slide-in-up transition-colors duration-500 ${isDarkMode ? "bg-[#111111] border-white/5" : "bg-white border-black/5"}`} style={{ animationDelay: "0.1s" }}>
-            <h2 className={`text-xs font-black mb-6 uppercase tracking-[0.3em] flex items-center gap-3 ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>
+            <h2 className={`text-[10px] font-black mb-6 uppercase tracking-[0.3em] flex items-center gap-3 ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>
               <span className={`w-8 h-[1px] ${isDarkMode ? "bg-white/20" : "bg-black/10"}`}></span>
               Office Details
             </h2>
@@ -324,12 +324,11 @@ END:VCARD`;
                 </div>
               </div>
 
-               {/* Map Button */}
-               <a
+              <a
                 href="https://maps.app.goo.gl/e4my654LBnP56eJn9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center justify-center w-full py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all ${isDarkMode ? "bg-white text-black" : "bg-black text-white"}`}
+                className={`flex items-center justify-center w-full py-4 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all ${isDarkMode ? "bg-white text-black" : "bg-black text-white"}`}
               >
                 View Map Location
               </a>
@@ -344,9 +343,8 @@ END:VCARD`;
                 { Icon: Globe, href: "#" },
                 { Icon: Instagram, href: "#" }
               ].map(({ Icon, href }, idx) => (
-                <a key={idx} href={href} className={`aspect-square border rounded-2xl flex items-center justify-center group transition-all duration-300 ${isDarkMode ? "bg-[#111111] border-white/5 hover:bg-white" : "bg-white border-black/5 hover:bg-black"}`}>
-                  <Icon className={`w-5 h-5 transition-colors ${isDarkMode ? "text-gray-500 group-hover:text-black" : "text-gray-400 group-hover:text-white"}`} />
-                </a>
+                <a key={idx} href={href} className={`aspect-square border rounded-2xl flex items-center justify-center group transition-all duration-300 outline outline-1 outline-offset-2 ${isDarkMode ? "bg-[#111111] border-white/5 hover:bg-white outline-white/10" : "bg-white border-black/5 hover:bg-black outline-black/10"}`}>
+                  <Icon className={`w-5 h-5 transition-colors ${isDarkMode ? "text-white group-hover:text-black" : "text-black group-hover:text-white"}`} />                </a>
               ))}
           </div>
 
@@ -388,6 +386,23 @@ END:VCARD`;
           0%, 100% { opacity: 0.03; transform: scale(1); }
           50% { opacity: 0.07; transform: scale(1.03); }
         }
+        @keyframes aurora-1 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        @keyframes aurora-2 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(-30px, 50px) scale(1.1); }
+          66% { transform: translate(20px, -20px) scale(0.9); }
+        }
+        @keyframes aurora-3 {
+          0%, 100% { transform: translate(-50%, -50%) scale(1); }
+          50% { transform: translate(-45%, -55%) scale(1.05); }
+        }
+        .animate-aurora-1 { animation: aurora-1 20s linear infinite; }
+        .animate-aurora-2 { animation: aurora-2 25s linear infinite; }
+        .animate-aurora-3 { animation: aurora-3 30s ease-in-out infinite; }
         .animate-slide-in-up { animation: slide-in-up 0.6s ease-out forwards; }
         .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
         .animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }

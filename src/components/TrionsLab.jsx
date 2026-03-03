@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import TrionsLabLogo from "./TrionsLabLogo";
+import TrionsLabBackgroundPattern from "./TrionsLabBackgroundPattern";
 
 // ==================== MAIN COMPONENT ====================
 export default function TrionsLab() {
@@ -214,16 +216,22 @@ END:VCARD`;
           <div className={`absolute inset-0 ${isDarkMode ? "bg-black" : "bg-white"}`}>
              <div className={`absolute inset-0 opacity-10 ${isDarkMode ? "bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)]" : "bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.05),transparent)]"}`}></div>
              
-             {/* Logo Pattern Background */}
-             <div 
-               className={`absolute inset-0 pointer-events-none select-none transition-all duration-1000 ${isDarkMode ? "opacity-40" : "opacity-[0.2] invert"}`}
-               style={{
-                 backgroundImage: `url("https://i.imgur.com/QmMuLey.jpeg")`,
-                 backgroundRepeat: 'repeat',
-                 backgroundSize: '60%',
-                 backgroundPosition: 'center',
-               }}
-             />
+             {/* SVG Logo Pattern Background */}
+             <svg className={`absolute inset-0 w-full h-full pointer-events-none select-none transition-all duration-1000 z-0 ${isDarkMode ? "text-white" : "text-black"}`}>
+               <defs>
+                 <pattern id="trions-staggered-pattern" x="0" y="0" width="70" height="70" patternUnits="userSpaceOnUse">
+                   {/* Main Grid pattern */}
+                   <g transform="translate(0, 0)">
+                     <TrionsLabBackgroundPattern width="35" height="35" opacity={isDarkMode ? "0.12" : "0.08"} />
+                   </g>
+                   {/* Staggered faint grid pattern */}
+                   <g transform="translate(35, 35)">
+                     <TrionsLabBackgroundPattern width="35" height="35" opacity={isDarkMode ? "0.07" : "0.05"} />
+                   </g>
+                 </pattern>
+               </defs>
+               <rect x="0" y="0" width="100%" height="100%" fill="url(#trions-staggered-pattern)" />
+             </svg>
           </div>
 
           {/* Hero content container */}
@@ -238,20 +246,17 @@ END:VCARD`;
               <div className="flex justify-center mb-6 animate-fade-in-up">
                 <div className="relative group">
                   {/* Rotating Decorative Ring */}
+                  
+                  
                   <div className={`absolute -inset-3 rounded-full border border-dashed animate-[spin_20s_linear_infinite] opacity-20 ${isDarkMode ? "border-white" : "border-black"}`} />
                   <div className={`absolute -inset-2 rounded-full border-2 border-blue-500/20 opacity-40 group-hover:opacity-100 transition duration-1000`}></div>
                   
-                  <div className={`absolute -inset-1 rounded-full blur group-hover:bg-opacity-40 transition duration-500 ${isDarkMode ? "bg-white/20 group-hover:bg-white/40" : "bg-black/5 group-hover:bg-black/10"}`}></div>
-                  <div className={`relative w-24 h-24 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.1)] transform group-hover:scale-105 transition-all duration-300 ${isDarkMode ? "bg-white" : "bg-white shadow-lg"}`}>
-                    <div className="text-center">
-                      <img
-                        className="w-20 h-20 rounded-full object-contain"
-                        src="https://i.imgur.com/fjtFjd4.png"
-                        alt="TRIONSLAB Official Logo"
-                        loading="eager"
-                        fetchpriority="high"
-                        decoding="async"
-                      />
+
+                  
+                  <div className={`absolute -inset-1 rounded-full blur group-hover:bg-opacity-40 transition duration-500 ${isDarkMode ? "bg-white/20 group-hover:bg-white/40" : "bg-black/20 group-hover:bg-black/40"}`}></div>
+                  <div className={`relative w-24 h-24 rounded-full flex items-center justify-center transform group-hover:scale-105 transition-all duration-300 ${isDarkMode ? "bg-white shadow-[0_0_20px_rgba(255,255,255,0.1)]" : "bg-black shadow-[0_0_20px_rgba(0,0,0,0.15)]"}`}>
+                    <div className="flex items-center justify-center w-full h-full p-2">
+                      <TrionsLabLogo className={`w-20 h-20 rounded-full object-contain ${isDarkMode ? "text-black" : "text-white"}`} />
                     </div>
                   </div>
                 </div>
